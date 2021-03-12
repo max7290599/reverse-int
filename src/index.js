@@ -1,8 +1,11 @@
-module.exports = function reverse (n) {
-let reverseNum;
-for(; n; n = Math.floor(n / 10)) {
-    reverseNum *= 10;
-    reverseNum += n % 10;
+module.exports = function reverse (num) {
+    let result = 0;
+    if (num<0) num *= -1;
+    while (num) {
+      result = result * 10 + num % 10;
+    num = Math.floor(num / 10);
+    }
+
+    return result;
 }
-return reverseNum;
-}
+
